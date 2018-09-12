@@ -2,6 +2,11 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
+      Hello {{ name }}
+      <button @click:="setName('Booba')">Change name</button>
+      <input type="text" v-class="{booba: isBooba}" v-model="name">
+    </p>
+    <p>
       For guide and recipes on how to configure / customize this project,<br>
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
@@ -32,9 +37,23 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  data () {
+    return {
+      name: 'Kaaris'
+    }
+  },
   props: {
     msg: String
+  },
+  computed: {
+    isBooba () {
+      return this.name === 'Booba'
+    }
+  },
+  methods: {
+    setName (name) {
+      this.name = name
+    }
   }
 }
 </script>
@@ -53,6 +72,6 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #9cf3cc;
 }
 </style>

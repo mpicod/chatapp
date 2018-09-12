@@ -19,3 +19,5 @@ npm run build
 ```
 npm run lint
 ```
+
+// Dossier /public, dossier accessible tout le temps; comme un site classique
