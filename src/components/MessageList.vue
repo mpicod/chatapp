@@ -14,3 +14,22 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  li{
+    list-style-type: none;
+    background-color: rgb(242, 242, 242);
+    margin: 5px;
+    &.sent{
+      text-align: right;
+      color: white;
+      background-color: rgba(#42b983,0.9);
+      border-radius: 10px 10px 0px 10px;
+      padding: 5px;
+      font-weight: 600;
+    }
+    &.received{
+      text-align: left;
+    }
+  }
+</style>

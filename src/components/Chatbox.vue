@@ -8,17 +8,21 @@
 <script>
 import MessageList from '@/components/MessageList'
 import Sendbox from '@/components/Sendbox'
+import store from '@/store'
 
 export default {
-  data () {
-    return {
-      messages: []
-    }
-  },
+  // data () {
+  //   return {
+  //     messages: []
+  //   }
+  // },
   methods: {
     onMessageSent (message) {
-      this.messages.push(message)
+      store.messages.push(message)
     }
+  },
+  computed: {
+    messages: () => store.messages
   },
   components: {
     MessageList,
