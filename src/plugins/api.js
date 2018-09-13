@@ -1,16 +1,43 @@
-// import io from 'socket.io-client'
 
-// const socket = io.conect('https://...')
+import io from 'socket.io-client'
+
+const socket = io.conect('https://...')
 
 const api = {
-  userRegister (usrname) {
-
+  get connected () {
+    return socket.connected
   },
-  messageSend (message) {
-
+  userRegister (username) {
+    return new Promise((resolve, reject) => {
+      socket.once('user registered', (user) => {
+        // resolve
+        resolve(user)
+      })
+      socket.once('error', (error) => {
+        reject(error)
+      })
+      emitProxy('user register', {
+        username
+      })
+    })
   },
-  commandSed (command, value) {
+  messageSend (message = '') {
+    emitProxy('message new', message)
+  },
+  commandSed (command, value = '') {
     this.messageSend(`/${command} ${value}`)
+  }
+}
+
+function emitProxy (event, ...args) {
+  if (socket.connected) {
+    socket.emit(event, ...args)
+  } else {
+    console.log('Socket disconnected, wainting for connection')
+    socket.on('conect', () => {
+      console.log('Socket reconnected. Emmitting')
+      socket.emit(event, ...args)
+    })
   }
 }
 

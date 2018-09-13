@@ -16,9 +16,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  ul{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
   li{
     list-style-type: none;
     background-color: rgb(242, 242, 242);
+    padding: 5px;
     margin: 5px;
     &.sent{
       text-align: right;
