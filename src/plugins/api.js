@@ -1,13 +1,13 @@
 
 import io from 'socket.io-client'
 
-const socket = io.conect('https://...')
+const socket = io.connect('https://bddi-2019-chat.herokuapp.com')
 
 const api = {
   get connected () {
     return socket.connected
   },
-  userRegister (username) {
+  userRegister (username = '') {
     return new Promise((resolve, reject) => {
       socket.once('user registered', (user) => {
         // resolve
@@ -21,12 +21,24 @@ const api = {
       })
     })
   },
+  // Methods
   messageSend (message = '') {
     emitProxy('message new', message)
   },
-  commandSed (command, value = '') {
+  commandSend (command, value = '') {
     this.messageSend(`/${command} ${value}`)
+  },
+  // Events
+  onMessage (cb) {
+    socket.on('message new', cb)
+  },
+  onUserUpdate (cb) {
+    socket.on('users update', cb)
+  },
+  onError (cb) {
+    socket.on('chat error', cb)
   }
+
 }
 
 function emitProxy (event, ...args) {

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-export default new Vue({
+const store = new Vue({
   data () {
     return {
       messages: [],
@@ -11,5 +11,24 @@ export default new Vue({
         'Hervé'
       ]
     }
+  },
+  created () {
+    Vue.nextTick(() => {
+      // @ts-ignore
+      this.$api.onMessage((data) => {
+        store.messages.push(data.message)
+      })
+
+      // @ts-ignore
+      this.$api.onUsersUpdate(({ type, user, users }) => {
+        console.log(`${user.username} just ${type} the room`)
+        store.users = users
+      })
+      this.$api.onError((data) => {
+        console.error(`Error from API ${data}`)
+      })
+    })
   }
 })
+
+export default store
