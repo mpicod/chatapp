@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <UserListUser v-for="{user, index} in users" :key="index" :user="user"/> <!-- la boucle for chez VUE. : => v-bind pour lui dire que c'est une variable, sinon il met une string -->
+        <UserListUser v-for="(user, index) in users" :key="index" :user="user"/> <!-- la boucle for chez VUE. : => v-bind pour lui dire que c'est une variable, sinon il met une string -->
     </ul>
 </template>
 
@@ -14,7 +14,8 @@ export default {
         'Booba',
         'Kaaris',
         'Robert',
-        'Jean'
+        'Jean',
+        'Pierre'
       ]
     }
   },

@@ -1,7 +1,6 @@
 <template>
     <ul>
-        <MessageListMessage/>
-        <MessageListMessage/>
+        <MessageListMessage v-for="(message, index) in messages" :key="index" :message="message"/>
     </ul>
 </template>
 
