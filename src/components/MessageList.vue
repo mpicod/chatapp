@@ -1,6 +1,10 @@
 <template>
     <ul>
-        <MessageListMessage v-for="(message, index) in messages" :key="index" :message="message"/>
+        <MessageListMessage
+          v-for="(message, index) in messages"
+          :key="index"
+          :message="message"
+        />
     </ul>
 </template>
 
@@ -11,6 +15,10 @@ export default {
   props: ['messages'],
   components: {
     MessageListMessage
+  },
+  updated () {
+    this.$emit('onMessageListUpdate', 'Yo, list updated')
+    console.log('UPDATED')
   }
 }
 </script>
@@ -20,6 +28,9 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: end;
+    justify-content: end;
+    overflow: hidden;
+    min-height: 50vmin;
   }
   li{
     list-style-type: none;

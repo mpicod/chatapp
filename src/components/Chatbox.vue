@@ -1,6 +1,6 @@
 <template>
     <section>
-        <MessageList :messages="messages"/>
+        <MessageList :messages="messages" @onMessageListUpdate="onMessageListUpdate"/>
         <Sendbox @messageSent="onMessageSent"/>
     </section>
 </template>
@@ -19,6 +19,9 @@ export default {
   methods: {
     onMessageSent (message) {
       store.messages.push(message)
+    },
+    onMessageListUpdate () {
+
     }
   },
   computed: {
@@ -28,5 +31,12 @@ export default {
     MessageList,
     Sendbox
   }
+
 }
 </script>
+<style lang="scss" scoped>
+  section{
+    overflow-y: scroll;
+    height: 40vh;
+  }
+</style>

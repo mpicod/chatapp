@@ -12,7 +12,7 @@ const router = new Router({
   routes: [ // un tableau, qui gère les routes
     {
       path: '/',
-      name: 'home',
+      name: 'chatroom',
       meta: {
         requireAuth: true
       },
