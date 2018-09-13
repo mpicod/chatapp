@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <p>
       Hello {{ name }}
-      <button @click:="setName('Booba')">Change name</button>
+      <button @click="setName('Booba')">Change name</button>
       <input type="text" v-class="{booba: isBooba}" v-model="name">
     </p>
     <p>
@@ -73,5 +73,8 @@ li {
 }
 a {
   color: #9cf3cc;
+}
+input.booba{
+  background-color: pink
 }
 </style>
