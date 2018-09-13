@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     onFormSubmit (username) {
-      this.api.userRegister({
+      this.$api.userRegister({
         username
       }).then((user) => {
         store.user = user

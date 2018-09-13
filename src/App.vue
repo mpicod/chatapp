@@ -33,6 +33,7 @@ export default {
   bottom: 5vh;
   right: 5vh;
   overflow-y: scroll;
+  overflow-x: hidden;
 
   border-radius: 10px;
   border: 2px solid #42b983;

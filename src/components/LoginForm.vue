@@ -25,3 +25,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+    form{
+        margin-top: 200px;
+    }
+</style>
