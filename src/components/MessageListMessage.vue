@@ -1,9 +1,16 @@
 <template>
   <transition name="appears">
     <li :class="{'sent': profil.username == message.user.username}">
-      <div> {{ message.user.username.substr(0, 1) }}</div>
+      <div class="avatar"> {{ message.user.username.substr(0, 1) }}</div>
       <span>@{{ message.user.username }}</span>
         <p>{{ message.text }}</p>
+      <div class="likes">
+        <img src="@/assets/heart.png" alt="">
+        <img src="@/assets/beer.png" alt="">
+        <img src="@/assets/wine.png" alt="">
+        <img src="@/assets/cocktail.png" alt="">
+        <img src="@/assets/plus.png" alt="">
+      </div>
     </li>
     <!-- v-class="{ sent : isUser }" -->
   </transition>
@@ -30,6 +37,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
   li{
     list-style-type: none;
     padding: 5px;
@@ -43,7 +51,7 @@ export default {
 
     }
     p{
-      padding: 5px;
+      padding: 12px;
       font-weight: 600;
       min-width:100px;
       max-width: 200px;
@@ -51,17 +59,17 @@ export default {
       margin: 10px;
       text-align: left;
       background-color: #F6F6F6;
-      border-radius: 0px 10px 10px 10px;
+      border-radius: 0px 25px 25px 25px;
     }
     &.sent p{
       background-color: rgba(#EC6663,0.9);
-      border-radius: 10px 0px 10px 10px;
+      border-radius: 22px 0px 22px 22px;
       text-align: right;
       color: white;
       margin-right: 10px;
 
     }
-    div{
+    div.avatar{
       text-align: center;
       text-transform: uppercase;
       vertical-align: middle;
@@ -79,7 +87,7 @@ export default {
     }
     span{
       position: absolute;
-      top: 5%;
+      top: 0;
       left: 65px;
       font-size: 10px;
       color: #C6C6C6;
@@ -93,6 +101,36 @@ export default {
       left: unset;
       right: 65px;
     }
+    .likes{
+      border: 1px solid black;
+      border-radius: 9999px;
+      padding: 5px 8px !important;
+      line-height: 9px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      box-sizing: border-box;
+      overflow: hidden;
+      background-color: transparent !important;
+      img{
+        padding: 0 4px;
+        height: 15px;
+        cursor: pointer;
+      }
+    }
+      div.likes{
+        top: 65% !important;
+        left: 50% !important;
+        right: unset !important;
+      }
+      &.sent div.likes{
+        top: 65% !important;
+        right: 50% !important;
+        left: unset !important;
+      }
+
   }
   .appears-enter-active {
   transition: all .8s ease;

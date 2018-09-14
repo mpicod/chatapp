@@ -1,6 +1,6 @@
 <template>
     <section>
-        <MessageList :messages="messages" @onMessageListUpdate="onMessageListUpdate"/>
+        <MessageList :messages="messages"/>
         <Sendbox @messageSent="onMessageSent"/>
     </section>
 </template>
@@ -23,6 +23,15 @@ export default {
   computed: {
     messages: () => store.messages
   },
+  // watch: {
+  //   messages () {
+  //     console.log(messages)
+  //     this.nextTick(() => {
+  //       console.log(store.messages)
+  //       window.scrollTo(0, 2222)
+  //     })
+  //   }
+  // },
   components: {
     MessageList,
     Sendbox

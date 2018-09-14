@@ -5,7 +5,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/login">Login</router-link>
     </div> -->
-    <router-view @onMessageListUpdate="scrollBottom"/>
+    <router-view/>
   </div>
 </template>
 
@@ -14,11 +14,6 @@ import Theheader from './components/Theheader'
 export default {
   components: {
     Theheader
-  },
-  methods: {
-    scrollBottom: function () {
-      this.scrollTop = 2000
-    }
   }
 }
 </script>
