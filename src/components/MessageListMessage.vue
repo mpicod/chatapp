@@ -54,7 +54,7 @@ export default {
       border-radius: 0px 10px 10px 10px;
     }
     &.sent p{
-      background-color: rgba(#42b983,0.9);
+      background-color: rgba(#EC6663,0.9);
       border-radius: 10px 0px 10px 10px;
       text-align: right;
       color: white;
@@ -75,7 +75,7 @@ export default {
       color: white;
     }
     &.sent div{
-      background-color: #42b983;
+      background-color: #EC6663;
     }
     span{
       position: absolute;

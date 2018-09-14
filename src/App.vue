@@ -39,7 +39,7 @@ export default {
   background-color: white;
 
   border-radius: 0 25px 25px 25px;
-  border: 2px solid #42b983;
+  border: 2px solid #EC6663;
   box-shadow: rgba(#2c3e50,0.5) 2px 2px 10px;
 
 }
@@ -49,7 +49,7 @@ export default {
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active {
-      color: #42b983;
+      color: #EC6663;
     }
   }
 }

@@ -4,7 +4,6 @@
         <form action="" @submit.prevent="onFormSubmit">
             <input type="text" placeholder="Log toi" v-model="username">
             <button><img src="./../assets/arrow.png" alt=""></button>
-            {{api.error}}
         </form>
     </div>
 </template>
@@ -38,7 +37,7 @@ export default {
     flex-direction: column;
   }
   div.avatar{
-    background-color: #42b983;
+    background-color: #EC6663;
     width: 100px;
     height: 100px;
     border-radius: 50%;
