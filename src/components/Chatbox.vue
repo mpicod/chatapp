@@ -11,18 +11,14 @@ import Sendbox from '@/components/Sendbox'
 import store from '@/store'
 
 export default {
-  // data () {
-  //   return {
-  //     messages: []
-  //   }
-  // },
   methods: {
     onMessageSent (message) {
-      store.messages.push(message)
-    },
-    onMessageListUpdate () {
-
+      // store.messages.push(message)
+      this.$api.messageSend(message)
     }
+    // onMessageListUpdate () {
+
+    // }
   },
   computed: {
     messages: () => store.messages

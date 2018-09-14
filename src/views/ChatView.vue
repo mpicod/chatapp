@@ -1,6 +1,6 @@
 <template>
     <div>
-        <UserList/>
+        <!-- <UserList/> -->
         <Chatbox/>
     </div>
 </template>

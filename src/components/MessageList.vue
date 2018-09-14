@@ -27,26 +27,11 @@ export default {
   ul{
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: flex-start;
     justify-content: end;
     overflow: hidden;
     min-height: 50vmin;
+    padding: 0;
   }
-  li{
-    list-style-type: none;
-    background-color: rgb(242, 242, 242);
-    padding: 5px;
-    margin: 5px;
-    &.sent{
-      text-align: right;
-      color: white;
-      background-color: rgba(#42b983,0.9);
-      border-radius: 10px 10px 0px 10px;
-      padding: 5px;
-      font-weight: 600;
-    }
-    &.received{
-      text-align: left;
-    }
-  }
+
 </style>

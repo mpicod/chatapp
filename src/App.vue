@@ -34,13 +34,14 @@ export default {
   position: absolute;
   bottom: 5vh;
   right: 5vh;
-  width: 20%;
-  min-width: 300px;
-  background-color: #373636;
+  width: 25%;
+  min-width: 500px;
+  background-color: white;
 
-  border-radius: 10px;
+  border-radius: 0 25px 25px 25px;
   border: 2px solid #42b983;
   box-shadow: rgba(#2c3e50,0.5) 2px 2px 10px;
+
 }
 #nav {
   padding: 30px;
@@ -51,5 +52,8 @@ export default {
       color: #42b983;
     }
   }
+}
+#app::-webkit-scrollbar {
+    display: none;
 }
 </style>
