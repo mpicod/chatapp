@@ -2,7 +2,7 @@
     <div class="container">
         <div class="avatar">{{ username.substr(0, 1) }}</div>
         <form action="" @submit.prevent="onFormSubmit">
-            <input type="text" placeholder="Log toi" v-model="username">
+            <input type="text" placeholder="Log toi" v-model="username" autofocus>
             <button><img src="./../assets/arrow.png" alt=""></button>
         </form>
     </div>

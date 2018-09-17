@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "surge -p dist -d deeply-income.surge.sh"
   },
   "dependencies": {
     "socket.io-client": "^2.1.1",

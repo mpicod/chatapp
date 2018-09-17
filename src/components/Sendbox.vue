@@ -1,7 +1,7 @@
 <template>
     <div>
         <form action="#" @submit.prevent="onFormSubmit">
-            <input type="text" v-model="input" placeholder="Envoie un chat !">
+            <input type="text" v-model="input" placeholder="Envoie un chat !" autofocus>
             <button><img src="./../assets/arrow.png" alt=""></button>
         </form>
     </div>
